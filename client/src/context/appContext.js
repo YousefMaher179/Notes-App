@@ -48,7 +48,7 @@ const AppProvider = ({ children }) => {
 
   //axios setup
   const authFetch = axios.create({
-    baseURL: "http://localhost:5000/api/v1",
+    baseURL: "/api/v1",
   });
 
   authFetch.interceptors.response.use(
@@ -123,7 +123,7 @@ const AppProvider = ({ children }) => {
 
     try {
       const { data } = await axios.post(
-        `http://localhost:5000/api/v1/auth/${endPoint}`,
+        `/api/v1/auth/${endPoint}`,
         currentUser
       );
       const { user } = data;
