@@ -3,9 +3,7 @@ import { StatusCodes } from "http-status-codes";
 import { BadRequestError, UnAuthenticatedError } from "../errors/index.js";
 import attachCookie from "../utils/attachCookie.js";
 import sendgridMail from "@sendgrid/mail";
-sendgridMail.setApiKey(
-  "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"
-);
+sendgridMail.setApiKey(process.env.SENDGRIDAPI);
 
 const signUp = async (req, res) => {
   const { email, password, name, phone, birthdayYear } = req.body;
